@@ -2,6 +2,11 @@ package hundirlaflota.model.barcos;
 
 public abstract class Barco {
    protected char nombre;
+   
+   /*
+    * ME CONFUNDÍ HACIENDO LOS METODOS DE COLOCAR Y COMPROBAR BARCOS
+    * HORIZONTAL ES VERTICAL Y VERTICAL HORIZONTAL
+    */
    protected char direccion; /* 'H' -> horizontal | 'V' -> vertical. */
    protected int longitud;
    protected int coordInicialX;
