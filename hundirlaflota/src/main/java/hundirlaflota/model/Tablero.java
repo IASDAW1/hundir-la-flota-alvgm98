@@ -205,4 +205,49 @@ public class Tablero {
          }
       }
    }
+
+   // Devuelve true si no le quedan barcos.
+   public boolean comprobarDerrota() {
+      /*
+       * Si encuentra una parte del tablero que no sea Agua, Agua atacada o Fuego
+       * Aún quedarian barcos.
+       */
+      for (int i = 0; i < 10; i++) {
+         for (int j = 0; j < 10; j++) {
+            if (tablero[i][j] != '*'
+                  && tablero[i][j] != 'A'
+                  && tablero[i][j] != 'F') {
+               return false;
+            }
+         }
+      }
+      return true;
+   }
+
+   // Devuelve false si no es un ataque valido o si ya atacó esta posicion.
+   public boolean recibirAtaque(int x, int y) {
+      if (x < 0 || x > 10
+            || y < 0 || y > 10) {
+         System.out.println("Posicion inexsistente.");
+         return false;
+      }
+
+      if (tablero[x][y] == 'A' || tablero[x][y] == 'F') {
+         System.out.println("Ya atacaste esta posición.");
+         return false;
+      } else if (tablero[x][y] == '*') {
+         tablero[x][y] = 'A';
+         System.out.println("AGUA!");
+         return true;
+      } else {
+         tablero[x][y] = 'F';
+         System.out.println("FUEGO!");
+         return true;
+      }
+   }
+
+   public char[][] getTablero() {
+      return tablero;
+   }
+
 }
