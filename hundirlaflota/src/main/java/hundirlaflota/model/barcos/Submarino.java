@@ -5,3 +5,4 @@ public class Submarino extends Barco {
       super('S', direccion, 3, coordInicialX, coordInicialY);
    }
 }
+//Comentarios
